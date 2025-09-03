@@ -10,7 +10,8 @@ pipeline{
         stage('Cloning Repository'){
             steps{
                 echo 'Cloning the Git repo...'
-                git 'https://github.com/parodie/flask_app.git'
+                git branch: 'main',
+                    url: 'https://github.com/parodie/flask_app.git'
             }
         }
         stage('Building Docker image'){
