@@ -7,6 +7,12 @@ pipeline{
     }
 
     stages{
+        stage('Test Docker') {
+            steps {
+                sh 'docker --version'
+                sh 'docker info'
+            }
+        }
         stage('Cloning Repository'){
             steps{
                 echo 'Cloning the Git repo...'
